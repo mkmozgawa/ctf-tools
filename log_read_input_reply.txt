@@ -1,0 +1,7 @@
+hi! send me lines :3
+INPUT: line 1
+first line
+INPUT: line 2
+second line
+INPUT: line 3
+third line

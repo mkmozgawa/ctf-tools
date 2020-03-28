@@ -1,12 +1,11 @@
 from pwn import *
 from helpers import bytes_to_string
 
-### start your netcat server on port 4444: `nc -l 4444`
+### start your netcat server: `netcat_read_all_input_server.py`
 ### whatever you receive from there will be saved to the log file
 
 try:
     conn = remote('localhost', 4444)
-
     res_lines = []
     res = bytes_to_string(conn.recvline())
 
@@ -19,8 +18,6 @@ try:
 
 except EOFError:
     pass
-
-print(res_lines)
 
 with open('log_read_input.txt', 'w') as f:
         for line in res_lines:
